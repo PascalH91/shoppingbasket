@@ -1,11 +1,11 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "9558f69a81c3f3cc615a6dff4731097b",
+    "revision": "d8ef51a6d3218696565dd06096042c36",
     "url": "/shoppingbasket/index.html"
   },
   {
-    "revision": "f21b2c9efdce544bce9d",
-    "url": "/shoppingbasket/static/css/main.d1b05096.chunk.css"
+    "revision": "96cb197da5e73678991b",
+    "url": "/shoppingbasket/static/css/main.7d9924f9.chunk.css"
   },
   {
     "revision": "d0c459e47b627ef18c48",
@@ -16,15 +16,15 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/shoppingbasket/static/js/2.1d8dc484.chunk.js.LICENSE"
   },
   {
-    "revision": "f21b2c9efdce544bce9d",
-    "url": "/shoppingbasket/static/js/main.f05cc95f.chunk.js"
+    "revision": "96cb197da5e73678991b",
+    "url": "/shoppingbasket/static/js/main.fcb92f38.chunk.js"
   },
   {
     "revision": "4964528fa4ae528597af",
     "url": "/shoppingbasket/static/js/runtime-main.938e9e08.js"
   },
   {
-    "revision": "5d5d9eefa31e5e13a6610d9fa7a283bb",
-    "url": "/shoppingbasket/static/media/logo.5d5d9eef.svg"
+    "revision": "68a06e3313de3328af90233fc82a2fbe",
+    "url": "/shoppingbasket/static/media/AKQA-Logo.68a06e33.svg"
   }
 ]);
