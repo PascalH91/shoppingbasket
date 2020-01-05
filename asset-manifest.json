@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/shoppingbasket/static/css/main.d1b05096.chunk.css",
+    "main.js": "/shoppingbasket/static/js/main.f05cc95f.chunk.js",
+    "main.js.map": "/shoppingbasket/static/js/main.f05cc95f.chunk.js.map",
+    "runtime-main.js": "/shoppingbasket/static/js/runtime-main.938e9e08.js",
+    "runtime-main.js.map": "/shoppingbasket/static/js/runtime-main.938e9e08.js.map",
+    "static/js/2.1d8dc484.chunk.js": "/shoppingbasket/static/js/2.1d8dc484.chunk.js",
+    "static/js/2.1d8dc484.chunk.js.map": "/shoppingbasket/static/js/2.1d8dc484.chunk.js.map",
+    "index.html": "/shoppingbasket/index.html",
+    "precache-manifest.c4de45b2f59a077f473af8daf7d9ae2f.js": "/shoppingbasket/precache-manifest.c4de45b2f59a077f473af8daf7d9ae2f.js",
+    "service-worker.js": "/shoppingbasket/service-worker.js",
+    "static/css/main.d1b05096.chunk.css.map": "/shoppingbasket/static/css/main.d1b05096.chunk.css.map",
+    "static/js/2.1d8dc484.chunk.js.LICENSE": "/shoppingbasket/static/js/2.1d8dc484.chunk.js.LICENSE",
+    "static/media/logo.svg": "/shoppingbasket/static/media/logo.5d5d9eef.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.938e9e08.js",
+    "static/js/2.1d8dc484.chunk.js",
+    "static/css/main.d1b05096.chunk.css",
+    "static/js/main.f05cc95f.chunk.js"
+  ]
+}
