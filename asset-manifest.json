@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/shoppingbasket/static/css/main.a216795f.chunk.css",
-    "main.js": "/shoppingbasket/static/js/main.f879c94e.chunk.js",
-    "main.js.map": "/shoppingbasket/static/js/main.f879c94e.chunk.js.map",
+    "main.js": "/shoppingbasket/static/js/main.ca70b846.chunk.js",
+    "main.js.map": "/shoppingbasket/static/js/main.ca70b846.chunk.js.map",
     "runtime-main.js": "/shoppingbasket/static/js/runtime-main.938e9e08.js",
     "runtime-main.js.map": "/shoppingbasket/static/js/runtime-main.938e9e08.js.map",
     "static/js/2.1e291d14.chunk.js": "/shoppingbasket/static/js/2.1e291d14.chunk.js",
     "static/js/2.1e291d14.chunk.js.map": "/shoppingbasket/static/js/2.1e291d14.chunk.js.map",
     "index.html": "/shoppingbasket/index.html",
-    "precache-manifest.27dcb83b40b5f8634432c1e259ca9b70.js": "/shoppingbasket/precache-manifest.27dcb83b40b5f8634432c1e259ca9b70.js",
+    "precache-manifest.6b7027d5f633e9c0592e2ffe8de5092f.js": "/shoppingbasket/precache-manifest.6b7027d5f633e9c0592e2ffe8de5092f.js",
     "service-worker.js": "/shoppingbasket/service-worker.js",
     "static/css/main.a216795f.chunk.css.map": "/shoppingbasket/static/css/main.a216795f.chunk.css.map",
     "static/js/2.1e291d14.chunk.js.LICENSE": "/shoppingbasket/static/js/2.1e291d14.chunk.js.LICENSE",
@@ -19,6 +19,6 @@
     "static/js/runtime-main.938e9e08.js",
     "static/js/2.1e291d14.chunk.js",
     "static/css/main.a216795f.chunk.css",
-    "static/js/main.f879c94e.chunk.js"
+    "static/js/main.ca70b846.chunk.js"
   ]
 }
