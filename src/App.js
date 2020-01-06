@@ -3,6 +3,7 @@ import AKQAlogo from "./AKQA-Logo.svg";
 import "./App.css";
 import Table from "./Components/Table";
 import items from "./items.json";
+import axios from "axios";
 
 class App extends Component {
   state = {
@@ -111,7 +112,41 @@ class App extends Component {
     });
   };
 
+  handleSubmit = event => {
+    if (event.target.className === "activated") {
+      let itemAmount = 0;
+      this.state.items.forEach(item => {
+        itemAmount += item.amount;
+      });
+
+      axios
+        .post("/about:blank", this.state)
+        .then(response => {
+          alert(
+            `Your order has been succesfully submitted. You bought ${itemAmount} items worth £${this.state.total.toFixed(
+              2
+            )} in total.`
+          );
+          this.setState({
+            submit: true
+          });
+        })
+        .catch(err => {
+          console.log("err", err);
+          alert(
+            `Your order has been succesfully submitted. You bought ${itemAmount} items worth £${this.state.total.toFixed(
+              2
+            )} in total.`
+          );
+        });
+    }
+  };
+
   render() {
+    let buyButtonState = "activated";
+    if (!this.state.items.length) {
+      buyButtonState = "deactivated";
+    }
     return (
       <div className="App">
         <main>
@@ -154,7 +189,14 @@ class App extends Component {
               </tbody>
             </table>
           </section>
-          <button id="buyButton">Buy Now »</button>
+          <button
+            id="buyButton"
+            className={buyButtonState}
+            type="submit"
+            onClick={this.handleSubmit}
+          >
+            Buy Now »
+          </button>
         </main>
         <footer>
           <p>

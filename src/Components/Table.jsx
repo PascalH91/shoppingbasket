@@ -3,7 +3,6 @@ import Trashcan from "../trashcan.svg";
 import "./table.css";
 
 const Table = props => {
-  console.log(props.items)
   return (
     <table id="itemList">
       <thead>
@@ -31,7 +30,7 @@ const Table = props => {
                     onChange={event =>
                       props.quantityHandler(item.id, event.target.value)
                     }
-                    onBlur={()=>props.blur(item.id)}
+                    onBlur={() => props.blur(item.id)}
                     value={item.amount}
                   />
                   <div

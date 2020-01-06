@@ -19,7 +19,7 @@
 }
 
 main {
-/*   background-color: grey; */
+  /*   background-color: grey; */
   width: calc(100vw - 2 * var(--basket-distance));
   max-width: 1000px;
   display: flex;
@@ -46,18 +46,22 @@ img {
 }
 
 #productList::-webkit-scrollbar {
-  -webkit-appearance: none;
+/*   -webkit-appearance: none; */
+  cursor: pointer;
 }
 
 #productList::-webkit-scrollbar:horizontal {
   height: 15px;
   background-color: rgb(255, 255, 255);
+  border-radius: 50px;
+  box-shadow: inset 3px -3px 4px rgba(0, 0, 0, 0.1);
 }
 
 #productList::-webkit-scrollbar-thumb:horizontal {
   border-radius: 8px;
   border: 2px solid rgb(255, 255, 255);
   background-color: rgba(149, 149, 149, 0.5);
+  box-shadow: inset -2px 2px 2px rgba(0, 0, 0, 0.1);
 }
 
 #priceCalculation {
@@ -68,17 +72,17 @@ img {
   width: 100%;
   max-width: 950px;
   margin-right: 50px;
-/*   background-color: blueviolet; */
+  /*   background-color: blueviolet; */
   font-size: 1.4rem;
 }
 
 #priceCalculation tr:last-child {
-/*   background-color: brown; */
+  /*   background-color: brown; */
   height: 8vh;
 }
 #priceCalculation td:first-child {
   padding-left: 20px;
-  min-width: 200px
+  min-width: 200px;
 }
 #priceCalculation td:last-child {
   text-align: right;
@@ -103,7 +107,13 @@ img {
   transition-duration: 0.3s;
 }
 
-#buyButton:hover {
+#buyButton.deactivated {
+  background-color: #666;
+  color: rgb(173, 173, 173);
+  cursor: auto;
+}
+
+#buyButton.activated:hover {
   background-color: #3333ff;
 }
 

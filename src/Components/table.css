@@ -104,6 +104,9 @@ input[type="number"]::-webkit-outer-spin-button {
   color: rgb(0, 0, 0);
 }
 
+#itemList th:last-child {
+  width: 50px;
+}
 #itemList td:last-child {
   width: 50px;
 }
@@ -126,5 +129,5 @@ input[type="number"]::-webkit-outer-spin-button {
 }
 #itemList img:hover {
   filter: invert(30%) sepia(50%) saturate(6000%) hue-rotate(225deg)
-    brightness(120%) contrast(100%);
+    brightness(120%) contrast(100%) ;
 }
