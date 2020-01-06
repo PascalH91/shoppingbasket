@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import AKQAlogo from "./AKQA-Logo.svg";
-import "./App.css";
+import AKQAlogo from "./assets/images/AKQA-Logo.svg";
+import "./assets/styles/App.css";
 import Table from "./Components/Table";
 import items from "./items.json";
 import axios from "axios";
@@ -13,6 +13,7 @@ class App extends Component {
     items: [...items]
   };
 
+  /* ----------------------- price calculation function ----------------------- */
   calcPrice = () => {
     let subTotal = 0;
     this.state.items.forEach(item => {
@@ -28,10 +29,12 @@ class App extends Component {
     });
   };
 
+  /* -------------------- calculates initital default price ------------------- */
   componentDidMount = () => {
     this.calcPrice();
   };
 
+  /* ------------------- handles changes of item quantities ------------------- */
   handleAmount = (id, event) => {
     let operator = event;
     let newItems = [...this.state.items];
@@ -82,6 +85,7 @@ class App extends Component {
     }
   };
 
+  /* --- if invalid input: resets to minimum quantity after defocusing input -- */
   handleBlur = id => {
     let newItems = [...this.state.items];
     this.state.items.forEach((item, index) => {
@@ -97,6 +101,7 @@ class App extends Component {
     });
   };
 
+  /* ------------------ handles list after deletion of items ------------------ */
   handleDelete = id => {
     let newItems = [...this.state.items];
     this.state.items.forEach((item, index) => {
@@ -112,34 +117,32 @@ class App extends Component {
     });
   };
 
+  /* -------------------- handles shopping cart submission -------------------- */
   handleSubmit = event => {
     if (event.target.className === "activated") {
-      let itemAmount = 0;
-      this.state.items.forEach(item => {
-        itemAmount += Number(item.amount);
-      });
-
       axios
         .post("/blank", this.state)
         .then(response => {
-          alert(
-            `Your order has been succesfully submitted. You bought ${itemAmount} items worth £${Number(
-              this.state.total
-            ).toFixed(2)} in total.`
-          );
           this.setState({
-            submit: true
+            submitted: true
           });
         })
         .catch(err => {
           console.log("err", err);
-          alert(
-            `Your order has been succesfully submitted. You bought ${itemAmount} items worth £${Number(
-              this.state.total
-            ).toFixed(2)} in total.`
-          );
+          this.setState({
+            submitted: true
+          });
         });
     }
+  };
+
+  /* --------------------------- close alert message -------------------------- */
+  handleAlert = () => {
+    let newState = this.state;
+    delete newState.submitted;
+    this.setState({
+      newState
+    });
   };
 
   render() {
@@ -147,6 +150,11 @@ class App extends Component {
     if (!this.state.items.length) {
       buyButtonState = "deactivated";
     }
+    let itemAmount = 0;
+    this.state.items.forEach(item => {
+      itemAmount += Number(item.amount);
+    });
+
     return (
       <div className="App">
         <main>
@@ -197,7 +205,20 @@ class App extends Component {
           >
             Buy Now »
           </button>
-        </main>
+        </main>{" "}
+        {this.state.submitted && (
+          <div id="alert">
+            <div id="message">
+              <span>
+                {" "}
+                Your order has been succesfully submitted. <br></br>You bought{" "}
+                <b>{itemAmount} items</b> worth{" "}
+                <b>£{Number(this.state.total).toFixed(2)}</b> in total.
+              </span>
+              <span onClick={this.handleAlert}>close</span>
+            </div>
+          </div>
+        )}
         <footer>
           <p>
             <b>&#9400; 2013 AKQA Ltd.</b> Registered in England: 2964394

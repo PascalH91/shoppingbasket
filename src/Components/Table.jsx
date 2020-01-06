@@ -1,6 +1,6 @@
 import React from "react";
-import Trashcan from "../trashcan.svg";
-import "./table.css";
+import Trashcan from "../assets/images/trashcan.svg";
+import "../assets/styles/table.css";
 
 const Table = props => {
   return (
@@ -14,12 +14,13 @@ const Table = props => {
           <th></th>
         </tr>
       </thead>
+
       <tbody>
         {props.items.map((item, index) => {
           return (
             <tr key={item.id}>
               <td>
-                {item.name}, {item.size}
+                {item.name}, <br className="lineBreak"></br> {item.size}
               </td>
               <td>{item.price}</td>
               <td>

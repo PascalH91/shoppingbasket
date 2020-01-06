@@ -10,6 +10,16 @@
   font-size: 1.4rem;
 }
 
+#itemList tr *:first-child {
+  padding-left: 20px;
+}
+
+#itemList tr > * {
+  padding: 10px 0;
+}
+
+/* ------------------ seperation table-header vs table-body ----------------- */
+
 #itemList th:nth-child(-n + 4) {
   border-bottom: transparent;
   -webkit-box-shadow: inset 0px -2px 0px 0px #000;
@@ -22,13 +32,7 @@
   border-top: 30px solid transparent;
 }
 
-#itemList tr > * {
-  padding: 10px 0;
-}
-
-#itemList tr *:first-child {
-  padding-left: 20px;
-}
+/* -------------------------- formatting table head sections ------------------------- */
 
 #itemList th:first-child {
   text-align: left;
@@ -48,6 +52,21 @@
   padding: 0 20px;
 }
 
+/* -------------------------- formatting table data sections ------------------------- */
+
+.lineBreak {
+  display: none;
+}
+
+#itemList td:first-child {
+  min-width: 200px;
+}
+
+#itemList td span {
+  display: inline;
+  padding: 0 !important;
+}
+
 #itemList td:nth-child(2) {
   text-align: right;
   padding: 0 20px;
@@ -61,6 +80,8 @@
   padding: 0 20px;
   width: 150px;
 }
+
+/* ------------------------------- quantifier ------------------------------- */
 
 #quantityBox {
   padding: 0 10px;
@@ -100,15 +121,19 @@ input[type="number"] {
   color: white;
   cursor: pointer;
   transition-duration: 0.2s;
+  border-radius: 2px;
 }
 .quantityChanger:hover {
   background-color: rgb(255, 255, 255);
   color: rgb(0, 0, 0);
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 .quantityChanger:active {
   background-color: rgb(221, 221, 221);
   color: rgb(0, 0, 0);
 }
+
+/* ------------------------------ delete ----------------------------- */
 
 #itemList th:last-child {
   width: 50px;
@@ -136,4 +161,14 @@ input[type="number"] {
 #itemList img:hover {
   filter: invert(30%) sepia(50%) saturate(6000%) hue-rotate(225deg)
     brightness(120%) contrast(100%);
+}
+
+/* -------------------------------------------------------------------------- */
+/*                                MEDIA QUERIES                               */
+/* -------------------------------------------------------------------------- */
+
+@media (max-width: 1050px) {
+  .lineBreak {
+    display: initial;
+  }
 }

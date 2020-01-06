@@ -1,0 +1,247 @@
+:root {
+  --basket-distance: 20vh;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+/* -------------------------------------------------------------------------- */
+/*                               general styling                              */
+/* -------------------------------------------------------------------------- */
+
+.App {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* -------------------------------------------------------------------------- */
+/*                                main styling                                */
+/* -------------------------------------------------------------------------- */
+
+main {
+  padding-top: 5vh;
+  width: calc(100vw - 2 * var(--basket-distance));
+  max-width: 1000px;
+  display: flex;
+  flex-direction: column;
+}
+
+main > section {
+  margin: 2vh 0;
+}
+
+/* ------------------------------- decription ------------------------------- */
+
+#description,
+img {
+  margin: 2vh 20px;
+}
+
+#description h1 {
+  text-shadow: 2px 1px 2px black;
+  font-size: 2.7rem;
+  margin-bottom: 2vh;
+}
+
+/* ------------------------------- productlist ------------------------------ */
+
+#productList {
+  overflow-x: auto;
+}
+
+#productList::-webkit-scrollbar {
+  cursor: pointer;
+}
+
+#productList::-webkit-scrollbar:horizontal {
+  height: 15px;
+  background-color: rgb(255, 255, 255);
+  border-radius: 50px;
+  box-shadow: inset 3px -3px 4px rgba(0, 0, 0, 0.1);
+}
+
+#productList::-webkit-scrollbar-thumb:horizontal {
+  border-radius: 8px;
+  border: 2px solid rgb(255, 255, 255);
+  background-color: rgba(149, 149, 149, 0.5);
+  box-shadow: inset -2px 2px 2px rgba(0, 0, 0, 0.1);
+}
+
+/* ---------------------------- price calculation --------------------------- */
+
+#priceCalculation {
+  margin: 20px 50px 5vh 0;
+}
+
+#priceCalculation > table {
+  width: 100%;
+  max-width: 950px;
+  margin-right: 50px;
+  font-size: 1.4rem;
+}
+
+#priceCalculation tr:last-child {
+  height: 8vh;
+}
+#priceCalculation td:first-child {
+  padding-left: 20px;
+  min-width: 200px;
+}
+#priceCalculation td:last-child {
+  text-align: right;
+  padding-right: 20px;
+}
+
+/* ------------------------------ submit button ------------------------------ */
+
+#buyButton {
+  align-self: flex-end;
+  width: 220px;
+  margin-right: 70px;
+  color: white;
+  font-size: 2.7rem;
+  padding: 5px 10px 10px 10px;
+  background-color: rgb(0, 0, 102);
+  border-radius: 15px;
+  font-weight: bolder;
+  word-spacing: 0px;
+  letter-spacing: -2px;
+  border: none;
+  box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.7);
+  outline: none;
+  cursor: pointer;
+  transition-duration: 0.3s;
+}
+
+#buyButton.deactivated {
+  background-color: #666;
+  color: rgb(173, 173, 173);
+  cursor: auto;
+}
+
+#buyButton.activated:hover {
+  background-color: #3333ff;
+}
+
+/* -------------------------------------------------------------------------- */
+/*                                   footer                                   */
+/* -------------------------------------------------------------------------- */
+
+footer {
+  color: #fff;
+  background-color: #666;
+  width: 100vw;
+  padding: 0 calc(var(--basket-distance) + 20px);
+  border-top: 1px solid rgb(0, 0, 0);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  margin-top: 5vh;
+}
+
+footer > p {
+  padding: 20px 0;
+}
+
+/* -------------------------------------------------------------------------- */
+/*                                    alert                                   */
+/* -------------------------------------------------------------------------- */
+
+#alert {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  z-index: 1000;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+#message {
+  height: 200px;
+  width: 70%;
+  max-width: 500px;
+  min-width: 342px;
+  background: rgb(255, 255, 255);
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 1) 59%,
+    rgba(220, 220, 220, 1) 100%
+  );
+  border: 2px solid rgba(0, 0, 102, 1);
+  border-radius: 25px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  box-shadow: 2px 2px 10px rgba(192, 192, 192, 0.4);
+}
+
+#message span {
+  padding: 0 5%;
+}
+
+#message span:first-child {
+  width: 100%;
+  padding: 30px 0;
+  border-bottom: 1px solid black;
+}
+
+#message span:last-child {
+  margin: 20px 50px 0 0;
+  align-self: flex-end;
+  width: 70px;
+  height: 30px;
+  background: rgb(255, 255, 255);
+  background: linear-gradient(
+    180deg,
+    rgb(255, 255, 255) 20%,
+    rgb(230, 230, 230) 65%,
+    rgb(163, 163, 163) 100%
+  );
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid rgb(70, 70, 70);
+  border-radius: 4px;
+  box-shadow: 1px 1px 1px rgba(0,0,0,0.3);
+}
+
+#message span:last-child:hover {
+  background: rgb(238, 238, 238);
+  color: rgb(0, 0, 102);
+  border: 2px solid rgb(0, 0, 102);
+}
+
+/* -------------------------------------------------------------------------- */
+/*                                MEDIA QUERIES                               */
+/* -------------------------------------------------------------------------- */
+
+@media (max-width: 520px) {
+  #message {
+    text-align: center;
+  }
+}
+
+@media (max-width: 950px) {
+  :root {
+    --basket-distance: 5vh;
+  }
+}
+
+@media (min-width: 1300px) {
+  footer {
+    padding: 0 calc((100vw - 1000px) / 2 + 20px);
+  }
+}
