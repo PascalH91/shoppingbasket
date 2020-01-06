@@ -116,16 +116,16 @@ class App extends Component {
     if (event.target.className === "activated") {
       let itemAmount = 0;
       this.state.items.forEach(item => {
-        itemAmount += item.amount;
+        itemAmount += Number(item.amount);
       });
 
       axios
-        .post("/about:blank", this.state)
+        .post("/blank", this.state)
         .then(response => {
           alert(
-            `Your order has been succesfully submitted. You bought ${itemAmount} items worth £${this.state.total.toFixed(
-              2
-            )} in total.`
+            `Your order has been succesfully submitted. You bought ${itemAmount} items worth £${Number(
+              this.state.total
+            ).toFixed(2)} in total.`
           );
           this.setState({
             submit: true
@@ -134,9 +134,9 @@ class App extends Component {
         .catch(err => {
           console.log("err", err);
           alert(
-            `Your order has been succesfully submitted. You bought ${itemAmount} items worth £${this.state.total.toFixed(
-              2
-            )} in total.`
+            `Your order has been succesfully submitted. You bought ${itemAmount} items worth £${Number(
+              this.state.total
+            ).toFixed(2)} in total.`
           );
         });
     }
