@@ -66,6 +66,7 @@
   padding: 0 10px;
   display: grid;
   width: 140px;
+  max-width: 140px;
   grid-template-columns: 70% 30%;
   grid-template-rows: 50% 50%;
 }
@@ -77,6 +78,10 @@ input[type="number"]::-webkit-outer-spin-button {
   appearance: none;
 }
 
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
 .quantityNumber {
   grid-column-start: 1;
   grid-column-end: 2;
@@ -85,6 +90,7 @@ input[type="number"]::-webkit-outer-spin-button {
   font-size: 1.4rem;
   text-align: right;
   padding: 0 10px;
+  width: 100%;
 }
 
 .quantityChanger {
@@ -129,5 +135,5 @@ input[type="number"]::-webkit-outer-spin-button {
 }
 #itemList img:hover {
   filter: invert(30%) sepia(50%) saturate(6000%) hue-rotate(225deg)
-    brightness(120%) contrast(100%) ;
+    brightness(120%) contrast(100%);
 }
