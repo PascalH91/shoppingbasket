@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/shoppingbasket/static/css/main.a216795f.chunk.css",
+    "main.css": "/shoppingbasket/static/css/main.aa0fa329.chunk.css",
     "main.js": "/shoppingbasket/static/js/main.7b35f0fc.chunk.js",
     "main.js.map": "/shoppingbasket/static/js/main.7b35f0fc.chunk.js.map",
     "runtime-main.js": "/shoppingbasket/static/js/runtime-main.938e9e08.js",
@@ -8,9 +8,9 @@
     "static/js/2.1e291d14.chunk.js": "/shoppingbasket/static/js/2.1e291d14.chunk.js",
     "static/js/2.1e291d14.chunk.js.map": "/shoppingbasket/static/js/2.1e291d14.chunk.js.map",
     "index.html": "/shoppingbasket/index.html",
-    "precache-manifest.1e370f2d176b916964ca43b1ab6e8476.js": "/shoppingbasket/precache-manifest.1e370f2d176b916964ca43b1ab6e8476.js",
+    "precache-manifest.f438b9a3fee813c0c3353855116e2f73.js": "/shoppingbasket/precache-manifest.f438b9a3fee813c0c3353855116e2f73.js",
     "service-worker.js": "/shoppingbasket/service-worker.js",
-    "static/css/main.a216795f.chunk.css.map": "/shoppingbasket/static/css/main.a216795f.chunk.css.map",
+    "static/css/main.aa0fa329.chunk.css.map": "/shoppingbasket/static/css/main.aa0fa329.chunk.css.map",
     "static/js/2.1e291d14.chunk.js.LICENSE": "/shoppingbasket/static/js/2.1e291d14.chunk.js.LICENSE",
     "static/media/AKQA-Logo.svg": "/shoppingbasket/static/media/AKQA-Logo.68a06e33.svg",
     "static/media/trashcan.svg": "/shoppingbasket/static/media/trashcan.cb37ce7e.svg"
@@ -18,7 +18,7 @@
   "entrypoints": [
     "static/js/runtime-main.938e9e08.js",
     "static/js/2.1e291d14.chunk.js",
-    "static/css/main.a216795f.chunk.css",
+    "static/css/main.aa0fa329.chunk.css",
     "static/js/main.7b35f0fc.chunk.js"
   ]
 }
