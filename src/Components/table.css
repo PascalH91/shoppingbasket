@@ -1,0 +1,114 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+#itemList {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 1.4rem;
+}
+
+#itemList th:nth-child(-n + 4) {
+  border-bottom: transparent;
+  -webkit-box-shadow: inset 0px -2px 0px 0px #000;
+  -moz-box-shadow: inset 0px -2px 0px 0px #000;
+  box-shadow: inset 0px -2px 0px 0px #000;
+  line-height: 25px;
+}
+
+#itemList tbody tr:first-child {
+  border-top: 30px solid transparent;
+}
+
+#itemList tr > * {
+  padding: 10px 0;
+}
+
+#itemList tr *:first-child {
+  padding-left: 20px;
+}
+
+#itemList th:first-child {
+  text-align: left;
+  padding: 0 20px;
+}
+#itemList th:nth-child(2) {
+  text-align: right;
+  padding: 0 20px;
+}
+#itemList th:nth-child(3) {
+  text-align: center;
+  padding: 0 20px;
+  width: 120px;
+}
+#itemList th:nth-child(4) {
+  text-align: right;
+  padding: 0 20px;
+}
+
+#itemList td:nth-child(2) {
+  text-align: right;
+  padding: 0 20px;
+}
+#itemList td:nth-child(3) {
+  text-align: center;
+  padding: 0 20px;
+}
+#itemList td:nth-child(4) {
+  text-align: right;
+  padding: 0 20px;
+  width: 150px;
+}
+
+#quantityBox {
+  padding: 0 10px;
+  display: grid;
+  width: 120px;
+  grid-template-columns: 70% 30%;
+  grid-template-rows: 50% 50%;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+.quantityNumber {
+  grid-column-start: 1;
+  grid-column-end: 2;
+  grid-row-start: 1;
+  grid-row-end: 3;
+  font-size: 1.4rem;
+  text-align: right;
+  padding: 0 10px;
+}
+
+.quantityChanger {
+  font-size: 0.7rem;
+  margin: 2px;
+  background-color: grey;
+  color: white;
+}
+
+#itemList td:last-child {
+  width: 50px;
+}
+#itemList td:last-child div {
+  padding: 0 !important;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#itemList img {
+  height: 30px;
+  padding: 0 !important;
+  margin: 0;
+  filter: invert(27%) sepia(51%) saturate(2878%) hue-rotate(346deg)
+    brightness(104%) contrast(97%);
+}
