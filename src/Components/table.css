@@ -41,7 +41,7 @@
 #itemList th:nth-child(3) {
   text-align: center;
   padding: 0 20px;
-  width: 120px;
+  width: 140px;
 }
 #itemList th:nth-child(4) {
   text-align: right;
@@ -65,7 +65,7 @@
 #quantityBox {
   padding: 0 10px;
   display: grid;
-  width: 120px;
+  width: 140px;
   grid-template-columns: 70% 30%;
   grid-template-rows: 50% 50%;
 }
@@ -89,9 +89,19 @@ input[type="number"]::-webkit-outer-spin-button {
 
 .quantityChanger {
   font-size: 0.7rem;
-  margin: 2px;
+  margin: 2px 8px;
   background-color: grey;
   color: white;
+  cursor: pointer;
+  transition-duration: 0.2s;
+}
+.quantityChanger:hover {
+  background-color: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
+}
+.quantityChanger:active {
+  background-color: rgb(221, 221, 221);
+  color: rgb(0, 0, 0);
 }
 
 #itemList td:last-child {
@@ -109,6 +119,12 @@ input[type="number"]::-webkit-outer-spin-button {
   height: 30px;
   padding: 0 !important;
   margin: 0;
-  filter: invert(27%) sepia(51%) saturate(2878%) hue-rotate(346deg)
-    brightness(104%) contrast(97%);
+  filter: invert(30%) sepia(40%) saturate(4000%) hue-rotate(225deg)
+    brightness(55%) contrast(100%);
+  cursor: pointer;
+  transition-duration: 0.2s;
+}
+#itemList img:hover {
+  filter: invert(30%) sepia(50%) saturate(6000%) hue-rotate(225deg)
+    brightness(120%) contrast(100%);
 }

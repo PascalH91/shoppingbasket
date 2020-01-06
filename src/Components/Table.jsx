@@ -3,6 +3,7 @@ import Trashcan from "../trashcan.svg";
 import "./table.css";
 
 const Table = props => {
+  console.log(props.items)
   return (
     <table id="itemList">
       <thead>
@@ -27,7 +28,10 @@ const Table = props => {
                   <input
                     type="number"
                     className="quantityNumber"
-                    onChange={(event) => props.quantityHandler(item.id, event.target.value)}
+                    onChange={event =>
+                      props.quantityHandler(item.id, event.target.value)
+                    }
+                    onBlur={()=>props.blur(item.id)}
                     value={item.amount}
                   />
                   <div
@@ -47,7 +51,11 @@ const Table = props => {
               <td>£{(item.amount * item.price).toFixed(2)}</td>
               <td>
                 <div>
-                  <img src={Trashcan} alt="delete symbol" />
+                  <img
+                    src={Trashcan}
+                    alt="delete symbol"
+                    onClick={() => props.delete(item.id)}
+                  />
                 </div>
               </td>
             </tr>

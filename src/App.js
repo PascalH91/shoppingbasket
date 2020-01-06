@@ -14,7 +14,7 @@ class App extends Component {
 
   calcPrice = () => {
     let subTotal = 0;
-    items.forEach(item => {
+    this.state.items.forEach(item => {
       subTotal += item.price * item.amount;
     });
     let vat = (subTotal * 20) / 100;
@@ -34,6 +34,7 @@ class App extends Component {
   handleAmount = (id, event) => {
     let operator = event;
     let newItems = [...this.state.items];
+
     if (operator === "+") {
       this.state.items.forEach((item, index) => {
         if (item.id === id) {
@@ -42,7 +43,7 @@ class App extends Component {
             {
               items: newItems
             },
-            this.calcPrice()
+            () => this.calcPrice()
           );
         }
       });
@@ -54,24 +55,60 @@ class App extends Component {
             {
               items: newItems
             },
-            this.calcPrice()
+            () => this.calcPrice()
           );
         }
       });
     } else {
       this.state.items.forEach((item, index) => {
         if (item.id === id) {
-          console.log("Hallo");
-          newItems[index].amount = event;
+          if (Number(event) !== 0) {
+            newItems[index].amount = Number(event).toFixed(0);
+          } else {
+            newItems[index].amount = event;
+          }
+          if (newItems[index].amount < 0 || newItems[index].amount === "0") {
+            newItems[index].amount = 1;
+          }
           this.setState(
             {
               items: newItems
             },
-            this.calcPrice()
+            () => this.calcPrice()
           );
         }
       });
     }
+  };
+
+  handleBlur = id => {
+    let newItems = [...this.state.items];
+    this.state.items.forEach((item, index) => {
+      if (item.id === id && !item.amount) {
+        newItems[index].amount = 1;
+        this.setState(
+          {
+            items: newItems
+          },
+          () => this.calcPrice()
+        );
+      }
+    });
+  };
+
+  handleDelete = id => {
+    let newItems = [...this.state.items];
+    this.state.items.forEach((item, index) => {
+      if (item.id === id) {
+        newItems.splice(index, 1);
+        this.setState(
+          {
+            items: newItems
+          },
+          () => this.calcPrice()
+        );
+      }
+    });
   };
 
   render() {
@@ -91,6 +128,8 @@ class App extends Component {
             <Table
               items={this.state.items}
               quantityHandler={this.handleAmount}
+              blur={this.handleBlur}
+              delete={this.handleDelete}
             />
           </section>
           <section id="priceCalculation">
