@@ -41,7 +41,7 @@ class App extends Component {
 
     if (operator === "+") {
       this.state.items.forEach((item, index) => {
-        if (item.id === id) {
+        if (item.id === id && newItems[index].amount < 10) {
           newItems[index].amount = Number(newItems[index].amount) + 1;
           this.setState(
             {
@@ -74,6 +74,9 @@ class App extends Component {
           if (newItems[index].amount < 0 || newItems[index].amount === "0") {
             newItems[index].amount = 1;
           }
+          /*           if (newItems[index].amount > 10) {
+            newItems[index].amount = 10;
+          } */
           this.setState(
             {
               items: newItems
@@ -85,10 +88,19 @@ class App extends Component {
     }
   };
 
-  /* --- if invalid input: resets to minimum quantity after defocusing input -- */
+  /* --- if invalid or to high input: resets to minimum or maximum quantity after defocusing input -- */
   handleBlur = id => {
     let newItems = [...this.state.items];
     this.state.items.forEach((item, index) => {
+      if (item.id === id && newItems[index].amount > 10) {
+        newItems[index].amount = 10;
+        this.setState(
+          {
+            items: newItems
+          },
+          () => this.calcPrice()
+        );
+      }
       if (item.id === id && !item.amount) {
         newItems[index].amount = 1;
         this.setState(
