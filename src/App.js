@@ -30,7 +30,7 @@ class App extends Component {
   };
 
   /* -------------------- calculates initital default price ------------------- */
-  componentWillMount = () => {
+  UNSAFE_componentWillMount = () => {
     this.calcPrice();
   };
 
