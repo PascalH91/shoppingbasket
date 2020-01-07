@@ -32,6 +32,10 @@
   border-top: 30px solid transparent;
 }
 
+#itemList tbody tr td:nth-child(-n + 4) {
+  transition-duration: 0.1s;
+}
+
 #itemList tbody tr:focus-within td:nth-child(-n + 4),
 #itemList tbody tr:hover td:nth-child(-n + 4) {
   background-color: #ddd;
